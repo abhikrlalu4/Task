@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content=""><meta name="csrf-token" content="Kb8alSV6lzup2SKWTDhEQjHRRXbp7ETzL0rZr1Vx">
+  
+
+  <title> Menu</title>
+<link rel="icon" href="images/restaurant.png" type="image/png">
+
+  <!-- Custom styles for this template-->
+  <link href="css/menu.css" rel="stylesheet">
+  
+  
+  
+  
+    <style>
+        @import  url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
+        @import  url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+		@import  url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+        /*custom code*/
+        .sidebar-dark .nav-item.active .nav-link {
+            color: #fff !important;
+            background: #9ab45b;
+        }
+        .sidebar-dark .nav-item.active .nav-link i {
+            color: #fff!important;
+        }
+         .sidebar-dark .nav-item .nav-link {
+            color: #9ab45b !important;
+        }
+        .sidebar-dark .nav-item .nav-link i {
+            color: #9ab45b!important;
+        }
+        .sidebar-dark .sidebar-heading {
+            color: #9ab45b;
+        }
+        .sidebar-dark #sidebarToggle {
+            background-color: #808080;
+        }
+        .sidebar-dark .sidebar-brand {
+            color: #fff;
+        }
+        .sidebar-dark #sidebarToggle:hover {
+            background-color: #808080;
+        }
+        .card-header{
+            border-bottom: 0;
+        }
+        .border-left-success {
+            border-left: .25rem solid #ff7300!important;
+        }
+        .btn-primary {
+            color: #fff;
+            background-color: #9ab45b;
+            border-color:white;
+        }
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #9ab45b;
+            border-color:white;
+        }
+        .page-item.active .page-link{
+            color: #fff;
+        }
+        
+       .edit-delete i.fas.fa-fw.fa-edit {
+            color: #808080;
+        }
+        .edit-delete button.btn.btn-primary {
+            background: unset;
+            border: unset;
+            display: inline;
+            padding: 0;
+            margin: 0;
+            margin-left: 5px;
+            color: #808080;
+        }
+        .edit-delete {
+                display: flex;
+            }
+        .fetch-img img {
+            width: 40%;
+            margin: 5px 0;
+        }
+        
+        .print-btn {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .print-btn button {
+            padding: 8px 10px;
+            background: #fff;
+            min-width: 110px;
+            border-radius: 4px;
+            color: #9ab45b;
+            border: 1px solid #9ab45b;
+            margin-bottom: 15px;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .print-btn button:hover{
+			background: #9ab45b;
+			border-color: #9ab45b;
+			color: #fff;
+		}
+		.print-btn a {
+            display: inline-block;
+            padding: 8px 10px;
+            background: #fff;
+            min-width: 110px;
+            border-radius: 4px;
+            color: #ff7b66;
+            border: 1px solid #ff7b66;
+            margin-bottom: 15px;
+            text-decoration: none;
+        }
+		.print-btn a:hover{
+			background: #ff7b66;
+			border-color: #ff7b66;
+			color: #fff;
+		}
+		.qr-table h2 {
+			font-weight: bold;
+			color: #000;
+		}
+		.qr-table {
+			text-align: center;
+		}
+		.menu-options img {
+            height: 360px;
+            width: 100%;
+        }
+		.qr-table .qr-logo img{
+			height: 80px;
+		}
+		td.qr-logo {
+			padding: 10px;
+		}
+		.qr-table {
+            text-align: center;
+            padding: 15px;
+        }
+        .select-menu {
+            text-align: center;
+            margin: 15px 0 0 0;
+        }
+        .select-menu label {
+            margin: 0;
+        }
+        
+        .container-radio {
+          display: block;
+          position: relative;
+          padding-left: 35px;
+          margin-bottom: 12px;
+          cursor: pointer;
+          font-size: 22px;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+        
+        /* Hide the browser's default checkbox */
+        .container-radio input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+        }
+        
+        /* Create a custom checkbox */
+        .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 28px;
+          width: 28px;
+          background-color: #eee;
+        }
+        
+        /* On mouse-over, add a grey background color */
+        .container-radio:hover input ~ .checkmark {
+          background-color: #ccc;
+        }
+        
+        /* When the checkbox is checked, add a blue background */
+        .container-radio input:checked ~ .checkmark {
+          background-color: #9ab45b;
+        }
+        
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+        
+        /* Show the checkmark when checked */
+        .container-radio input:checked ~ .checkmark:after {
+          display: block;
+        }
+        
+        /* Style the checkmark/indicator */
+        .container-radio .checkmark:after {
+            left: 11px;
+            top: 5px;
+            width: 7px;
+            height: 14px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        .select-menu label {
+            width: 30px;
+            height: 30px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        input#image {
+            height: 45px;
+        }
+        
+        .border-left-1 {
+            border-left: .25rem solid #ff7b66!important;
+        }
+        .border-left-1  div.text-xs{
+            color: #ff7b66!important;
+        }
+        .border-left-1 input.razorpay-payment-button{
+                background: unset;
+                border: 1px solid #ff7b66;
+                border-radius: 4px;
+                font-size: 14px;
+                padding: 5px 15px;
+                color: #ff7b66;
+        }
+        .border-left-1 input.razorpay-payment-button:hover {
+            color: #fff;
+            background: #ff7b66;
+            transition: all 1s;
+        }
+        
+        
+        .border-left-2 {
+            border-left: .25rem solid #5ea8fd!important;
+        }
+        .border-left-2  div.text-xs{
+            color: #5ea8fd!important;
+        }
+        .border-left-2 input.razorpay-payment-button{
+                background: unset;
+                border: 1px solid #5ea8fd;
+                border-radius: 4px;
+                font-size: 14px;
+                padding: 5px 15px;
+                color: #5ea8fd;
+        }
+        .border-left-2 input.razorpay-payment-button:hover {
+            color: #fff;
+            background: #5ea8fd;
+            transition: all 1s;
+        }
+        
+        .border-left-3 {
+            border-left: .25rem solid #9ab45b!important;
+        }
+        .border-left-3  div.text-xs{
+            color: #9ab45b!important;
+        }
+        .border-left-3 input.razorpay-payment-button{
+                background: unset;
+                border: 1px solid #9ab45b;
+                border-radius: 4px;
+                font-size: 14px;
+                padding: 5px 15px;
+                color: #9ab45b;
+        }
+        .border-left-3 input.razorpay-payment-button:hover {
+            color: #fff;
+            background: #9ab45b;
+            transition: all 1s;
+        }
+        .sidebar-brand-icon img {
+            height: 60px;
+            width: auto;
+        }
+        .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+        color: #fff;
+        background-color: #9ab45b !important;
+        border-color: #9ab45b!important;
+    }
+    .btn-primary.focus, .btn-primary:focus {
+        color: #fff;
+        background-color: #9ab45b;
+        border-color: #9ab45b;
+        box-shadow: none;
+    }
+    .page-item.active .page-link {
+        background-color: #9ab45b;
+        border-color: #9ab45b;
+    }
+    body#page-top {
+        background: url(images/slider-image1.jpg) !important;
+        width:75%;
+        padding-left:20%;
+        padding-top: 8%;
+    }
+    #wrapper #content-wrapper {
+        background-color: unset;
+    }
+    .card-header {
+        background: unset;
+    }
+    ul.bg-gradient-primary {
+        background-color: #fff;
+        /* background-image: linear-gradient(180deg,#2f2d4e 10%,#224abe 100%); */
+        background-size: cover;
+        box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+    }
+    footer.sticky-footer.bg-white {
+        background: unset !important;
+    }
+    .cus-form-btn {
+        width: 120px;
+    }
+        
+    .popup-global .popup-data {
+        height: 300px;
+        background: #fff;
+        width: 30%;
+        margin: auto;
+        top: 10%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 18px #00000040;
+        border-radius: 10px;
+    }
+    .popup-global {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        background: rgba(154, 180, 91, 0.2784313725490196);
+        z-index: 99999;
+        overflow: hidden;
+    }
+    .popup-global .popup-data h2 {
+        font-size: 24px;
+        color: #9ab45b;
+    }
+    .popup-data a {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: #ff7b66;
+        display: inline-block;
+    }
+    
+
+    .pop-text {
+        min-height: 130px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .pop-text h2 {
+        font-size: 24px;
+        color: #9ab45b;
+        text-align: center;
+    }
+    .pop-text button.close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: #ff7b66;
+        opacity: 1;
+    }
+    div#success-pop{
+        background: rgba(154, 180, 91, 0.19) !important;
+    }
+     div#success-pop .modal-content {
+        border: 0;
+    }
+    .pop-text button.close:focus {
+        border: 0;
+        outline: 0;
+        box-shadow: none;
+    }
+    .sidebar-dark #sidebarToggle::after {
+        color: rgb(255, 255, 255);
+    }
+    .sidebar-dark.toggled #sidebarToggle::after {
+        color: rgb(255, 255, 255);
+    }
+    button.btn.cus-dlt-btn {
+        padding: 0;
+        color: #707070;
+    }
+    button.btn.cus-dlt-btn:focus {
+        box-shadow: unset;
+    }
+    .edit-delete a {
+        color: #9ab45b;
+        font-weight: 700;
+    }
+    .edit-delete a:hover{
+        text-decoration: none;
+    }
+    .edit-delete i.fas.fa-fw.fa-edit {
+        color: #5ea8fd;
+    }
+    .edit-delete button.btn.btn-primary {
+        background: unset;
+        border: unset;
+        display: inline;
+        padding: 0;
+        margin: 0;
+        margin-left: 5px;
+        color: red;
+    }
+    .edit-delete {
+        display: flex;
+    }
+    p.special-text-1 {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+    }
+    p.special-text-2 {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+    }
+    p.special-text-3 {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+    }
+    .dash-price span {
+        font-size: 18px;
+    }
+    .dash-price {
+        font-size: 24px;
+    }
+    .sidebar-dark .sidebar-brand {
+        color: #9ab45b;
+        font-size: 14px;
+    }
+    .copyright span a:hover {
+        color: #9ab45b;
+    }
+    .copyright span a {
+        color: #9ab45b;
+    }
+    input.form-control:focus {
+        box-shadow: none;
+        border-color: #d1d3e2;
+    }
+    select.form-control:focus {
+        box-shadow: none;
+        border-color: #d1d3e2;
+    }
+    textarea.form-control:focus {
+        box-shadow: none;
+        border-color: #d1d3e2;
+    }
+    
+    .by-menubazaar p {
+        margin: 0;
+        font-size: 20px;
+        margin-right: 15px;
+        font-family: 'Nothing You Could Do', cursive;
+        font-weight: ;
+        text-transform: lowercase;
+    }
+    
+    .by-menubazaar img {
+        height: 60px;
+    }
+    .by-menubazaar {
+        height: 70px;
+        display: flex;
+        max-width: 250px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .update-account-info {
+        padding-left: 10px;
+    }
+    .update-account-info label {
+        font-size: 15px;
+        padding-right: 0;
+    }
+    .dropdown-menu.dropdown-menu-right.shadow.animated--grow-in.show i {
+        color: #9ab45b !important;
+    }
+    .dropdown-item.active, .dropdown-item:active {
+        color: #fff;
+        text-decoration: none;
+        background-color: #eaeaea;
+    }
+    .upload-pdf {
+        margin: 10px 0;
+    }
+    .upload-separate p {
+        margin: 0;
+        font-size: 20px;
+        display: inline-block;
+        background: #fff;
+        position: relative;
+        text-transform: uppercase;
+    }
+    .upload-separate {
+        padding: 20px 0;
+        text-align: center;
+        position: relative;
+    }
+    .fetch-pdf input:first-child {
+        max-width: 250px;
+        margin-right: 20px;
+    }
+    .fetch-pdf {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .upload-separate:before {
+        height: 1px;
+        width: 100%;
+        display: block;
+        background: #d1d3e2;
+        content: '';
+        top: 50%;
+        position: absolute;
+    }
+    
+    p.pdf-name {
+        text-align: center;
+    }
+    a.sidebar-brand.d-flex.align-items-center.justify-content-center.logo-left img {
+        width: 140px;
+        height: auto;
+    }
+    ul.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordion.toggled a.sidebar-brand.d-flex.align-items-center.justify-content-center.logo-left img {
+        width: 48px;
+        height: auto;
+    }
+    .customer-name {
+        font-size: 20px;
+    }
+    p.gst-text {
+        text-align: left;
+        margin-top: 0px;
+        margin-bottom: 0;
+        font-size: 16px;
+    }
+    p.plan-expire {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 0;
+        color: #fff;
+    }
+    p.plan-expire span {
+        background: #9ab45b;
+        font-size: 18px !important;
+        padding: 5px 6px;
+        color: #fff;
+        border-radius: 50%;
+    }
+    .expire-plan-outer {
+        display: block;
+        padding: 10px;
+        background: #ff7b66;
+    }
+    .plan-info img {
+        height: 70px;
+        width: auto;
+    }
+    .plan-expire {
+        
+        padding: 6px 10px;
+        background: #fff;
+        border-radius: 8px;
+		padding-left: 0;
+		padding-top: 0;
+		overflow: hidden;
+    }
+	.plan-expire .plan-expire-inner{
+		display: flex;
+        align-items: center;
+        justify-content: space-between;
+	}
+	.plan-info {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-left: 10px;
+	}
+    .plan-inner p {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 0;
+        margin-left: 20px;
+    }
+    .purchase-plan p {
+		margin-bottom: 0;
+		color: #9ab45b;
+		position: relative;
+		top: -15px;
+	}
+    .purchase-plan p span {
+        font-weight: bold;
+        font-size: 20px;
+		    position: relative;
+    top: 2px;
+    }
+    .purchase-plan p a:hover {
+        text-decoration: none;
+        color: #fff;
+    }
+    .purchase-plan p a {
+        color: #9ab45b;
+    }	img.logo-half {		display: none;	}		ul.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordion.toggled img.logo-full{		display: none;	}	ul.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordion.toggled img.logo-half {		display: block;	}
+	
+	
+	.print-btn a:first-child {
+		margin-right: 10px;
+	}
+	h2.current-plan {
+		margin: 0;
+		color: #fff;
+		font-size: 14px;
+		background: #9ab45b;
+		padding: 2px 10px;
+		border-radius: 0;
+		font-weight: 500;
+		margin-bottom: 5px;
+		display: inline-block;
+		position: relative;
+		top: -3px;
+	}
+	.plan-inner {
+		margin-left: 10px;
+	}
+	.plan-info > div:first-child {
+		text-align: center;
+	}
+	.plan-inner p span {
+		color: #888;
+		font-size: 14px;
+	}
+	.plan-inner p {
+		margin: 0;
+		color: #000;
+		font-size: 18px;
+		line-height: 24px;
+		padding-left: 10px;
+	}
+	.purchase-plan p a {
+		color: #fff;
+		background: #9ab45b;
+		padding: 10px;
+		border-radius: 4px;
+	}
+	.row.custom-menu .food-card-title h4 {
+		max-width: 70% !important;
+	}
+	.row.custom-menu .food-card-title h4 small {
+		font-size: 12px; 
+	}
+	a.view-pdf {
+		font-weight: 700;
+	}
+	a.view-pdf:hover {
+		color: #9ab45b;
+	}
+	a.view-pdf.remove-pdf {
+		color: #ff7b66;
+		margin-left: 20px;
+	}
+	.offers-outer label {
+		margin-bottom: 2px;
+	}
+	.alert.alert-success{
+		background: rgba(154, 180, 91, 0.33) !important;
+		color: #000 !important;
+		border-color: rgba(154, 180, 91, 1) !Important;
+    }
+    
+
+
+
+
+
+
+
+
+</style> 
+</head>
+
+
+<body id="page-top">
+
+<div class="card shadow mb-4">
+
+    <div class="card-body">
+        <form id="asdasd" method="post" action="">
+            <input type="hidden" name="_token" value="Kb8alSV6lzup2SKWTDhEQjHRRXbp7ETzL0rZr1Vx">
+            <div>
+                <label for="img">Select image:</label>
+                <input accept="image/*" class="browse-class" type="file" id="image-drop-zone-section-input-desktop-0">
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-md-3">
+                    <label for="inputState" style="color:grey; font-weight: normal;"><b>Cuisines</b></label>
+                    <select id="inputState" class="form-control fix-category" name="category_id">
+                        <option >Select</option>
+                        <option value="509">Indian</option>
+                        <option value="510" >Chinese</option>
+                        <option value="511" >Mexician</option>
+                        <option value="512" >Italian</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="dishname" style="color:grey; font-weight: normal;"><b>Dish Name</b></label>
+                    <input type="text" class="form-control" id="dishname" placeholder="" name="dishname" value="" required="">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputState" style="color:grey; font-weight: bold;">Food Type</label>
+                    <select id="inputState" class="form-control" name="foodtype">
+                        <option >Select</option>
+                        <option value="3">Combo</option>
+                        <option value="1">Vegetarian</option>
+                        <option value="2">Non-Vegetarian</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="price" style="color: grey; font-weight: bold;">Full Price</label>
+                    <input type="text" class="form-control" id="price" placeholder="" name="price" value="" required="">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="price_half" style="color: grey; font-weight: bold;"> Half Price</label>
+                    <input type="text" class="form-control" id="price_half" placeholder="" name="price_half" value="">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="as_mrp" style="color: grey; font-weight: bold;">Other</label>
+                    <input type="text" class="form-control" id="as_mrp" placeholder="" name="as_mrp" value="" maxlength="15">
+                </div>
+
+            </div>
+
+            <div class="form-row" id="errormsg" style="display:none">
+                <label>
+                    <p style="color:red">In multiple price type required both full and half price </p>
+                </label>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="description" style="color:grey; font-weight: bold;">Description</label>
+                    <textarea class="form-control" id="description" rows="3" name="description"></textarea>
+                </div>
+
+            </div>
+        	<button type="submit" style="color:white;background-color:rgb(143, 49, 49);" class="btn btn-primary cus-form-btn">Add Menu</button>
+			</form>
+
+		</div>
+    </div>
+</body>
+</html>
